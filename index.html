@@ -107,8 +107,9 @@
       --bg:        #F8F6F2;
       --bg-card:   #FFFFFF;
       --dark:      #27241F;
-      --accent:    #B8682E;
-      --accent-lt: #D4895A;
+      --accent:    #8E5023;
+      --accent-lt: #B8682E;
+      --accent-hv: #A45E28;
       --muted:     #6E6660;
       --border:    #E2DDD7;
       --sage:      #5E7260;
@@ -135,7 +136,7 @@
 
     /* HERO */
     #hero { min-height: 100vh; display: flex; align-items: center; padding: 100px 2rem 4rem; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(184,104,46,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 10% 80%, rgba(94,114,96,0.06) 0%, transparent 60%); pointer-events: none; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 80% 50%, rgba(142,80,35,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 60% at 10% 80%, rgba(94,114,96,0.06) 0%, transparent 60%); pointer-events: none; }
     .hero-inner { max-width: 900px; margin: 0 auto; position: relative; }
     .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; opacity: 0; animation: fadeUp 0.7s 0.1s forwards; }
     .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 2px; background: var(--accent); }
@@ -145,7 +146,7 @@
     .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.5s forwards; }
     .btn { display: inline-block; padding: 0.75rem 1.8rem; border-radius: 4px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
     .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-lt); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(184,104,46,0.3); }
+    .btn-primary:hover { background: var(--accent-hv); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(142,80,35,0.3); }
     .btn-outline { background: transparent; color: var(--dark); border: 2px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
     .hero-credentials { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; gap: 2.5rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.6s forwards; }
@@ -166,7 +167,7 @@
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .about-left { display: flex; flex-direction: column; gap: 2rem; }
     .about-photo-wrap { display: flex; justify-content: center; }
-    .about-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center top; border: 4px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.1); display: block; }
+    .about-photo { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: center; border: 4px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.1); display: block; }
     .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.97rem; }
     .edu-list { display: flex; flex-direction: column; gap: 1rem; }
     .edu-item { padding: 1.2rem 1.4rem; background: var(--bg); border-radius: 6px; border-left: 3px solid var(--accent); }
@@ -186,7 +187,7 @@
     .tier-items li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
     .tier-note { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--muted); font-style: italic; }
     .flat-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.8rem; margin-bottom: 2rem; }
-    .flat-box h3 { font-family: var(--font-head); font-size: 1.4rem; font-weight: 600; color: var(--dark); margin-bottom: 0.3rem; }
+    .flat-box h3 { /* large card heading */ font-family: var(--font-head); font-size: 1.4rem; font-weight: 600; color: var(--dark); margin-bottom: 0.3rem; }
     .flat-box p { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.2rem; }
     .flat-items { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 1rem; }
     .flat-item { background: var(--bg); border-radius: 6px; padding: 1rem 1.2rem; }
@@ -195,13 +196,13 @@
     .flat-item-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
     .modifiers-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .mod-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
-    .mod-box h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+    .mod-box .mod-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
     .mod-list { display: flex; flex-direction: column; gap: 0.6rem; }
     .mod-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 0.86rem; }
     .mod-label { color: var(--dark); }
     .mod-plus { font-weight: 700; color: #B8392E; font-size: 0.82rem; }
     .mod-minus { font-weight: 700; color: var(--sage); font-size: 0.82rem; }
-    .services-note { margin-top: 1.5rem; padding: 1rem 1.4rem; background: rgba(184,104,46,0.07); border-radius: 6px; border-left: 3px solid var(--accent); font-size: 0.85rem; color: var(--muted); }
+    .services-note { margin-top: 1.5rem; padding: 1rem 1.4rem; background: rgba(142,80,35,0.08); border-radius: 6px; border-left: 3px solid var(--accent); font-size: 0.85rem; color: var(--muted); }
     .services-note strong { color: var(--dark); }
 
     /* PROCESS */
@@ -219,11 +220,11 @@
     .portfolio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
     .portfolio-card { background: var(--bg); border-radius: 8px; padding: 1.8rem; border: 1px solid var(--border); transition: box-shadow 0.2s, transform 0.2s; }
     .portfolio-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .portfolio-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(184,104,46,0.1); padding: 0.2rem 0.6rem; border-radius: 3px; margin-bottom: 0.8rem; }
+    .portfolio-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: rgba(142,80,35,0.10); padding: 0.2rem 0.6rem; border-radius: 3px; margin-bottom: 0.8rem; }
     .portfolio-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; line-height: 1.2; }
     .portfolio-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
     .portfolio-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.8rem; font-size: 0.8rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-    .portfolio-link:hover { color: var(--accent-lt); }
+    .portfolio-link:hover { color: var(--accent-hv); }
     .portfolio-link svg { transition: transform 0.2s; }
     .portfolio-link:hover svg { transform: translateX(3px); }
 
@@ -232,7 +233,7 @@
     .software-text h3 { font-family: var(--font-head); font-size: 1.8rem; font-weight: 600; color: #fff; margin-bottom: 0.5rem; }
     .software-text p { font-size: 0.92rem; color: rgba(255,255,255,0.6); max-width: 420px; }
     .sw-btn { background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 4px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; transition: all 0.2s; cursor: pointer; border: none; font-family: var(--font-body); }
-    .sw-btn:hover { background: var(--accent-lt); transform: translateY(-1px); }
+    .sw-btn:hover { background: var(--accent-hv); transform: translateY(-1px); }
 
     /* MODAL */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(39,36,31,0.55); backdrop-filter: blur(4px); z-index: 200; align-items: center; justify-content: center; padding: 1.5rem; }
@@ -248,7 +249,7 @@
     .modal-sw-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.9rem; }
     .modal-sw-list-single { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 0.9rem; }
     .modal-sw-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.4rem; display: flex; flex-direction: column; }
-    .modal-sw-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.6rem; border-radius: 3px; margin-bottom: 0.5rem; background: rgba(184,104,46,0.1); color: var(--accent); align-self: flex-start; }
+    .modal-sw-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.18rem 0.6rem; border-radius: 3px; margin-bottom: 0.5rem; background: rgba(142,80,35,0.10); color: var(--accent); align-self: flex-start; }
     .modal-sw-badge.avail { background: rgba(94,114,96,0.12); color: var(--sage); }
     .modal-sw-badge.paid { background: rgba(39,36,31,0.08); color: var(--dark); }
     .modal-sw-name { font-size: 0.97rem; font-weight: 700; color: var(--dark); margin-bottom: 0.35rem; }
@@ -270,12 +271,12 @@
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
     .contact-item { display: flex; align-items: center; gap: 1rem; }
-    .contact-icon { width: 44px; height: 44px; background: rgba(184,104,46,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
+    .contact-icon { width: 44px; height: 44px; background: rgba(142,80,35,0.10); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--accent); }
     .contact-lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.1rem; }
     .contact-val { font-size: 0.95rem; font-weight: 600; color: var(--dark); text-decoration: none; }
     .contact-val:hover { color: var(--accent); }
     .avail-box { margin-top: 1rem; padding: 1.2rem 1.4rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
-    .avail-box h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.6rem; }
+    .avail-box .avail-title { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.6rem; }
     .avail-row { display: flex; justify-content: space-between; font-size: 0.84rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); color: var(--muted); }
     .avail-row:last-child { border-bottom: none; }
     .avail-row span:last-child { color: var(--dark); font-weight: 600; }
@@ -286,7 +287,7 @@
     /* REVEAL / COPY (anti-scraping) */
     .reveal-container { display: inline-flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
     .reveal-btn { background: var(--bg); border: 1px dashed var(--border); padding: 0.4rem 0.85rem; border-radius: 4px; cursor: pointer; font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; letter-spacing: 0.02em; }
-    .reveal-btn:hover { border-style: solid; color: var(--accent); border-color: var(--accent); background: rgba(184,104,46,0.05); }
+    .reveal-btn:hover { border-style: solid; color: var(--accent); border-color: var(--accent); background: rgba(142,80,35,0.06); }
     .reveal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
     .copy-btn { background: transparent; border: 1px solid var(--border); width: 28px; height: 28px; border-radius: 4px; cursor: pointer; color: var(--muted); display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; padding: 0; }
     .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
@@ -427,6 +428,7 @@
 </div>
 
 <!-- HERO -->
+<main>
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
@@ -454,7 +456,10 @@
     <div class="about-grid">
       <div class="about-left">
         <div class="about-photo-wrap">
-          <img src="photo.jpg" alt="Garen Cooper" class="about-photo">
+          <picture>
+            <source srcset="photo.webp" type="image/webp">
+            <img src="photo.jpg" alt="Garen Cooper" class="about-photo" width="600" height="600" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="about-text">
           <p>I&rsquo;m a freelance IT specialist and web developer with a background spanning computer information systems, software development, and infrastructure management. I work with small businesses, nonprofits, and individuals across Maryland who need reliable, personalized tech support without the overhead of a large firm.</p>
@@ -599,7 +604,7 @@
 
     <div class="modifiers-row">
       <div class="mod-box">
-        <h4>Surcharges</h4>
+        <h3 class="mod-title">Surcharges</h3>
         <div class="mod-list">
           <div class="mod-row"><span class="mod-label">Evening Hours (Mon&ndash;Fri, after 7PM)</span><span class="mod-plus">+$5/hr</span></div>
           <div class="mod-row"><span class="mod-label">Weekend Work (Sat &amp; Sun)</span><span class="mod-plus">+$5/hr</span></div>
@@ -610,7 +615,7 @@
         </div>
       </div>
       <div class="mod-box">
-        <h4>Discounts</h4>
+        <h3 class="mod-title">Discounts</h3>
         <div class="mod-list">
           <div class="mod-row"><span class="mod-label">Nonprofit Organizations (verified 501(c))</span><span class="mod-minus">&ndash;10%</span></div>
           <div class="mod-row"><span class="mod-label">Senior Citizens (age 65+)</span><span class="mod-minus">&ndash;5%</span></div>
@@ -857,7 +862,7 @@
           </div>
         </div>
         <div class="avail-box">
-          <h4>Typical Availability</h4>
+          <h3 class="avail-title">Typical Availability</h3>
           <div class="avail-row"><span>In-Person</span><span>Mon&ndash;Fri, 8AM&ndash;5PM</span></div>
           <div class="avail-row"><span>Remote</span><span>Mon&ndash;Fri, 8AM&ndash;7PM</span></div>
           <div class="avail-row"><span>Evening / Weekend</span><span>Available (+$5/hr surcharge)</span></div>
@@ -890,6 +895,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
